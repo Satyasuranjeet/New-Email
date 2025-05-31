@@ -390,10 +390,6 @@ def not_found(error):
 def internal_error(error):
     return jsonify({"error": "Internal server error"}), 500
 
-# For Vercel serverless deployment
-def handler(request):
-    return app(request.environ, lambda *args: None)
-
 if __name__ == '__main__':
     # For local development
     port = int(os.getenv("PORT", 5000))
