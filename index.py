@@ -372,6 +372,10 @@ def set_user_api_limit():
     except Exception as e:
         return jsonify({"error": "Invalid user ID"}), 400
 
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({"message": "Welcome to the app"}), 200
+
 # Health check endpoint
 @app.route('/health', methods=['GET'])
 def health_check():
